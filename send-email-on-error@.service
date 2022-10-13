@@ -1,0 +1,8 @@
+[Unit]
+Description=sending error notification email
+
+[Service]
+Type=oneshot
+User=root
+EnvironmentFile=/etc/sysconfig/send-email-on-error.cfg
+ExecStart=/usr/local/bin/send-email-on-error $TO_ADDRESS %i
